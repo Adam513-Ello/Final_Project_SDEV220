@@ -18,6 +18,7 @@
 * Design and implement user registration form with email and password authentication
 
 
+
 **Sprint 2: Points Accumulation System and Reward Redemption Functionality**
 >Goal 1: Implement points accumulation system based on customer spending
 >
@@ -35,6 +36,7 @@
 * Develop feedback for successful or failed redemption attempts
 
 
+
 **Sprint 3: Admin Interface for Accounts and Points Management**
 >Goal: Create interface for adjusting points and managing user accounts
 >
@@ -44,6 +46,7 @@
 * Develop reporting tools to monitor reward program performance and user activity
 
 
+
 **Sprint 4: Testing and Bug Fixes**
 >Goal: Conduct extensive testing and fix any identified bugs
 >
@@ -51,6 +54,7 @@
 * Perform meticulous testing of all app features to identify and resolve any issues or bugs.
 * Ensure compatability for different web browsers
 * Address and revise any app performance issues to enhance speed and effciency
+
 
 
 **Sprint 5: Final Review**
