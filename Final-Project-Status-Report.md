@@ -95,11 +95,11 @@
 * Britt began developing code for the new member registration window, which asks for user first and last name
 * Britt began developing code for Existing Member Login window, which shows reward balance, past purchases, item to purchase and the points earned if purchased, and rewards that can be redeemed along with how many points needed to redeem them. She also coded feedback messages for successful and failed reward redemptions.
 
-![Rewards System Windows](https://media.discordapp.net/attachments/1280868273541615639/1284922854781223012/Screenshot_2024-09-15_125913.png?ex=66e86529&is=66e713a9&hm=72f5f733cef6f06e8024332fd5cfb753471a54121f667f482b176689470c7dcf&=&format=webp&quality=lossless&width=1243&height=686)
-
+![Rewards System Windows](https://media.discordapp.net/attachments/1280868273541615639/1284922854781223012/Screenshot_2024-09-15_125913.png?ex=66f399e9&is=66f24869&hm=74ba1e6b09f8a93b4891d5d1980ccfc34bdae0ab180c3c3e33b75af6a35f8a5c&=&format=webp&quality=lossless&width=1243&height=686)
 ![Rewards System Windows 2](https://media.discordapp.net/attachments/1280868273541615639/1284922855087276154/Screenshot_2024-09-15_125955.png?ex=66e86529&is=66e713a9&hm=3452e7309ae80831bb55b909dc85e34a45b62e9cff3b701554b55e2667d23b66&=&format=webp&quality=lossless&width=1012&height=918)
 
-![Rewards System Windows 3](https://media.discordapp.net/attachments/1280868273541615639/1284922855385075843/Screenshot_2024-09-15_130058.png?ex=66e86529&is=66e713a9&hm=8c87ea9207f96e16417bcfc44693ed8372a7831e1b4a489e92e4154cdba3a668&=&format=webp&quality=lossless&width=1732&height=1138)
+![Rewards System Windows 3]![image](https://github.com/user-attachments/assets/f7ac2ada-3237-4dd2-a297-74e3a87d0cbf)
+
 
 ![Rewards System Windows 4](https://media.discordapp.net/attachments/1280868273541615639/1284922855750111262/Screenshot_2024-09-15_130131.png?ex=66e86529&is=66e713a9&hm=ba056d4d078322ed6207aaf6e3b6d84ad04cf86c7d8f69c1f6a423718967393a&=&format=webp&quality=lossless&width=1642&height=1138)
 
