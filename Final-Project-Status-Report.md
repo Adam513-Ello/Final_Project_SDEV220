@@ -15,7 +15,7 @@
 ***Tasks***
 * Set up project repository and development environment
 * Create UML Class Diagram
-* Design and implement user registration form with email and password authentication
+
 
 
 
