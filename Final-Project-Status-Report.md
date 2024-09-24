@@ -100,10 +100,9 @@
 
 ![Rewards System Windows 3]![image](https://github.com/user-attachments/assets/f7ac2ada-3237-4dd2-a297-74e3a87d0cbf)
 
+![Rewards System Windows 4]![image](https://github.com/user-attachments/assets/87dd912c-78a2-4e97-bbf4-f0f3b0ad64a2)
 
-![Rewards System Windows 4](https://media.discordapp.net/attachments/1280868273541615639/1284922855750111262/Screenshot_2024-09-15_130131.png?ex=66e86529&is=66e713a9&hm=ba056d4d078322ed6207aaf6e3b6d84ad04cf86c7d8f69c1f6a423718967393a&=&format=webp&quality=lossless&width=1642&height=1138)
-
-![Rewards System Windows 5](https://media.discordapp.net/attachments/1280868273541615639/1284922856135856208/Screenshot_2024-09-15_130152.png?ex=66e86529&is=66e713a9&hm=df829bc5cfaa5a7263b2ffd8f3c7fa1b98136dfe7152d7a210e88f954e7d548e&=&format=webp&quality=lossless&width=1758&height=1138)
+![Rewards System Windows 5]![image](https://github.com/user-attachments/assets/a3adecd6-562c-4765-bc6c-263c23481509)
 
 
 *September 24, 2024*
