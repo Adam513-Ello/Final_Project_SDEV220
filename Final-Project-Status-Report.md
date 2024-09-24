@@ -32,7 +32,7 @@
 >
 ***Tasks***
 * Design rewards catalog with different redemption options
-* Integrate points remdemption process and enable ability to redeem points for rewards
+* Integrate points redemption process and enable ability to redeem points for rewards
 * Develop feedback for successful or failed redemption attempts
 
 
@@ -53,7 +53,7 @@
 ***Tasks***
 * Perform meticulous testing of all app features to identify and resolve any issues or bugs.
 * Ensure compatability for different web browsers
-* Address and revise any app performance issues to enhance speed and effciency
+* Address and revise any app performance issues to enhance speed and efficiency
 
 
 
@@ -63,12 +63,12 @@
 ***Tasks***
 * Comprehensive review of all features and functionality
 * Create deployment documentation
-* Move app from development to production enviroment
-* Verify that app works correctly in production enviroment and all systems function as expected. Resolve any deployment issues.
+* Move app from development to production environment
+* Verify that app works correctly in production environment and all systems function as expected. Resolve any deployment issues.
 
 # Team Meetings
 
-**Upcoming Meeting: September 22, 2024**
+**Upcoming Meeting: TBD**
 
 
 # Progress Summary
@@ -77,6 +77,8 @@
 * Autumn created Discord for team communication
 * Adam created Github Repository and sent invite to all team members
 * Steve created and completed Class UML
+* Amelia created ad formatted a status report and will continue to add updates throughout the project
+
 
 
 ## ***In-Progress Tasks***
@@ -99,8 +101,8 @@
 ![Rewards System Windows 4](https://media.discordapp.net/attachments/1280868273541615639/1284922855750111262/Screenshot_2024-09-15_130131.png?ex=66e86529&is=66e713a9&hm=ba056d4d078322ed6207aaf6e3b6d84ad04cf86c7d8f69c1f6a423718967393a&=&format=webp&quality=lossless&width=1642&height=1138)
 ![Rewards System Windows 5](https://media.discordapp.net/attachments/1280868273541615639/1284922856135856208/Screenshot_2024-09-15_130152.png?ex=66e86529&is=66e713a9&hm=df829bc5cfaa5a7263b2ffd8f3c7fa1b98136dfe7152d7a210e88f954e7d548e&=&format=webp&quality=lossless&width=1758&height=1138)
 
-
-
+*September 24, 2024*
+* Amelia added Sprint Tasks on Kaban board for others to edit and adjust
 
 
 
