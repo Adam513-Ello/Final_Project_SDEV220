@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from PIL import Image, ImageTk
 
 # Class to store customer information
 class Customers:
@@ -40,7 +41,7 @@ class MainScreen(tk.Tk):
         # Create Widgets
         self.menu = Menu(self)
         self.menu.grid(row=0, column=0, sticky='nswe')
-        
+
         # Store customers
         self.customers = {}
         
@@ -51,30 +52,68 @@ class Menu(tk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
         self.parent = parent
-        self.configure(bg='#81bbff')
+        self.configure(bg='#67C8E6')
+
+        # Load and set background image
+        self.bg_image = Image.open("C:/WoodBG.png")
+        self.bg_image = self.bg_image.resize((700, 700), Image.LANCZOS)
+        self.bg_photo = ImageTk.PhotoImage(self.bg_image)
+        
+        self.bg_label = tk.Label(self, image=self.bg_photo)
+        self.bg_label.place(relwidth=1, relheight=1)
+        self.bg_label.lower()  # Send the background label to the back
+        
+        # Load and place the image at the top and center
+        self.image = Image.open("C:/Moose Logo.jpg")
+        self.image = self.image.resize((300, 300), Image.LANCZOS)
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.image_label = tk.Label(self, image=self.photo, bg='#81bbff')
+        self.image_label.grid(row=0, column=0, columnspan=3, pady=20)
+        
+        # Center the menu in the screen
+        self.parent.update_idletasks()
+        width = self.parent.winfo_width()
+        height = self.parent.winfo_height()
+        x = (self.parent.winfo_screenwidth() // 2) - (width // 2)
+        y = (self.parent.winfo_screenheight() // 2) - (height // 2)
+        self.parent.geometry(f'{width}x{height}+{x}+{y}')
         
         # Configure the grid for the menu
         self.columnconfigure(0, weight=1)
-        self.rowconfigure((0, 1, 2), weight=1)
+        self.rowconfigure((1, 2, 3), weight=1)
         
         self.customer_widgets()
-    
+
     def customer_widgets(self):
-        self.button1 = tk.Button(self, text='New Member', width=10, bg='#2936f2', fg='black', activebackground='yellow', activeforeground='black', font=("Helvetica", 14, "bold"), command=self.open_new_window)
-        self.button2 = tk.Button(self, text='Existing Member', width=10, bg='#a715b5', fg='black', activebackground='yellow', activeforeground='black', font=("Helvetica", 14, "bold"), command=self.existing_member_window)
-        self.button3 = tk.Button(self, text='Exit', width=10, bg='#f22943', fg='black', activebackground='yellow', activeforeground='black', font=("Helvetica", 14, "bold"), command=self.quit)
+        button_width = 200  # Set button width to match the image width
+        self.button1 = tk.Button(self, text='New Member', width=button_width, bg='#282224', fg='white', activebackground='yellow', activeforeground='black', font=("Helvetica", 18, "bold"), command=self.open_new_window, relief='flat', borderwidth=0, highlightthickness=0)
+        self.button2 = tk.Button(self, text='Existing Member', width=button_width, bg='#282224', fg='white', activebackground='yellow', activeforeground='black', font=("Helvetica", 18, "bold"), command=self.existing_member_window, relief='flat', borderwidth=0, highlightthickness=0)
+        self.button3 = tk.Button(self, text='Exit', width=button_width, bg='#FF0000', fg='black', activebackground='yellow', activeforeground='black', font=("Helvetica", 18, "bold"), command=self.quit, relief='flat', borderwidth=0, highlightthickness=0)
         
         # Place the widgets within the Menu with padding
-        self.button1.grid(row=0, column=0, sticky='nswe', padx=20, pady=20)
-        self.button2.grid(row=1, column=0, sticky='nswe', padx=20, pady=20)
-        self.button3.grid(row=2, column=0, sticky='nswe', padx=20, pady=20)
+        self.button1.grid(row=1, column=0, sticky='nswe', padx=20, pady=20)
+        self.button2.grid(row=2, column=0, sticky='nswe', padx=20, pady=20)
+        self.button3.grid(row=3, column=0, sticky='nswe', padx=20, pady=20)
         
     # Define functionalities of the new window that is opened upon click:    
     def open_new_window(self):
         new_window = tk.Toplevel(self)
         new_window.title("New Member Registration")
         new_window.geometry("400x300")
+
+        # Center the new window relative to the parent window
+        self.update_idletasks()
+        parent_x = self.winfo_rootx()
+        parent_y = self.winfo_rooty()
+        parent_width = self.winfo_width()
+        parent_height = self.winfo_height()
         
+        x = parent_x + (parent_width // 2) - (400 // 2)
+        y = parent_y + (parent_height // 2) - (300 // 2)
+        new_window.geometry(f"400x300+{x}+{y}")
+        
+        new_window.transient(self)
+        new_window.grab_set()
         
         label = tk.Label(new_window, text="Enter your first and last name:")
         label.pack(pady=10)
@@ -87,6 +126,8 @@ class Menu(tk.Frame):
         
         submit_button = tk.Button(new_window, text="Submit", command=lambda: self.submit_info(new_window))
         submit_button.pack(pady=10)
+
+        self.wait_window(new_window)
         
     # Define functionalities of the existing member window that is opened upon click:     
     def existing_member_window(self):
@@ -94,7 +135,21 @@ class Menu(tk.Frame):
         self.existing_window.title("Existing Member Login")
         self.existing_window.geometry("600x625")
         self.existing_window.configure(bg='#81bbff')   # Set background color
+
+        # Center the new window relative to the parent window
+        self.update_idletasks()
+        parent_x = self.winfo_rootx()
+        parent_y = self.winfo_rooty()
+        parent_width = self.winfo_width()
+        parent_height = self.winfo_height()
         
+        x = parent_x + (parent_width // 2) - (600 // 2)
+        y = parent_y + (parent_height // 2) - (625 // 2)
+        self.existing_window.geometry(f"600x625+{x}+{y}")
+        
+        self.existing_window.transient(self)
+        self.existing_window.grab_set()
+
         label = tk.Label(self.existing_window, text="Enter your first and last name:")
         label.pack(pady=10)
         
@@ -103,6 +158,8 @@ class Menu(tk.Frame):
         
         submit_button = tk.Button(self.existing_window, text="Submit", command=self.fetch_member_data)
         submit_button.pack(pady=10)
+
+        self.wait_window(self.existing_window)
     
     def fetch_member_data(self):
         full_name = self.text_box.get("1.0", tk.END).strip()
@@ -192,7 +249,7 @@ class Menu(tk.Frame):
     
     def show_message(self, message, window):
         message_label = tk.Label(window, text=message)
-        message_label.pack(pady=10)
+        message_label
 
 # Example usage
 if __name__ == "__main__":
