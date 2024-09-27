@@ -79,6 +79,7 @@
 * Steve created and completed Class UML
 * Amelia created ad formatted a status report and will continue to add updates throughout the project
 * Sprint 1: Setup and Core Features Tasks Completed
+  
 
 
 ## ***In-Progress Tasks***
@@ -107,6 +108,11 @@
 
 *September 24, 2024*
 * Amelia added Sprint Tasks on Kaban board for others to edit and adjust
+* Autumn got permission from owner to use Blue Moose Coffee Lounge logo for our project
+
+
+*September 25, 2024*
+* Steve updated the menu screen design and made it so that the forms will open in the center of the menu screen. He also made it so the menu screen buttons are disabled until the pop up window is closed. 
 
 
 
