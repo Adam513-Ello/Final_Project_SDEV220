@@ -113,7 +113,5 @@
 
 *September 25, 2024*
 * Steve updated the menu screen design and made it so that the forms will open in the center of the menu screen. He also made it so the menu screen buttons are disabled until the pop up window is closed. 
-
-
-
+![Rewards System Windows](https://cdn.discordapp.com/attachments/1280868273541615639/1288682674797543465/image.png?ex=66f6bb84&is=66f56a04&hm=ecc99d86621abf27df4d14416816b2547d9f4be1ccd8b90fc5968c61b4c4e721&)
 
