@@ -18,13 +18,13 @@ class RedeemPoints(tk.Toplevel):
         self.geometry("400x250")
 
         # Load and set the background image
-        bg_image = Image.open("WoodBG.png")  # Change this to your image path
+        bg_image = Image.open("WoodBG.png")  
         bg_image = bg_image.resize((400, 250), Image.LANCZOS)
         bg_photo = ImageTk.PhotoImage(bg_image)
         
         bg_label = tk.Label(self, image=bg_photo)
-        bg_label.image = bg_photo  # Keep a reference to avoid garbage collection
-        bg_label.place(relwidth=1, relheight=1)  # Cover the entire window
+        bg_label.image = bg_photo 
+        bg_label.place(relwidth=1, relheight=1) 
 
         # Customize message label
         self.message_label = tk.Label(self, text=message, font=("Helvetica", 16), bg="#f2ee29")
@@ -76,7 +76,7 @@ class Menu(tk.Frame):
         
         self.bg_label = tk.Label(self, image=self.bg_photo)
         self.bg_label.place(relwidth=1, relheight=1)
-        self.bg_label.lower()  # Send the background label to the back
+        self.bg_label.lower()  
         
         # Load and place the image at the top and center
         self.image = Image.open("Moose Logo.jpg")
@@ -140,7 +140,7 @@ class Menu(tk.Frame):
         bg_label.place(relwidth=1, relheight=1)
 
         # Label for the name entry
-        label = tk.Label(new_window, text="Enter your first and last name:", bg="#81bbff")  # Match background color
+        label = tk.Label(new_window, text="Enter your first and last name:", bg="#81bbff") 
         label.pack(pady=10)
 
         # First name entry
