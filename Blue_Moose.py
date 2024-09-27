@@ -100,7 +100,7 @@ class Menu(tk.Frame):
         self.customer_widgets()
 
     def customer_widgets(self):
-        button_width = 200  # Set button width to match the image width
+        button_width = 200  
         self.button1 = tk.Button(self, text='New Member', width=button_width, bg='#282224', fg='white', activebackground='yellow', activeforeground='black', font=("Helvetica", 18, "bold"), command=self.open_new_window, relief='flat', borderwidth=0, highlightthickness=0)
         self.button2 = tk.Button(self, text='Existing Member', width=button_width, bg='#282224', fg='white', activebackground='yellow', activeforeground='black', font=("Helvetica", 18, "bold"), command=self.existing_member_window, relief='flat', borderwidth=0, highlightthickness=0)
         self.button3 = tk.Button(self, text='Exit', width=button_width, bg='#FF0000', fg='black', activebackground='yellow', activeforeground='black', font=("Helvetica", 18, "bold"), command=self.quit, relief='flat', borderwidth=0, highlightthickness=0)
