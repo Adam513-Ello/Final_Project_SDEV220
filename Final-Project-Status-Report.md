@@ -79,8 +79,8 @@
 * Steve created and completed Class UML
 * Amelia created ad formatted a status report and will continue to add updates throughout the project
 * Sprint 1: Setup and Core Features Tasks Completed
-  
-
+* Sprint 2: Points Accumulation System and Reward Redemption Functionality
+* Sprint 3: Admin Interface for Accounts and Points Management
 
 ## ***In-Progress Tasks***
 
