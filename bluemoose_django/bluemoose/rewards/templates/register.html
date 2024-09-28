@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h1>New Member Registration</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" required>
+        
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" required>
+        
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" name="phone_number" required>  <!-- Add this line -->
+    
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
