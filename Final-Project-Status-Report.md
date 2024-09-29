@@ -121,4 +121,4 @@
 
 
 *September 28, 2024*
-* Amelia began converting the Python Tkinter code to Django. 
+* Amelia began converting the Python Tkinter code to Django and then editing and designing the main window
