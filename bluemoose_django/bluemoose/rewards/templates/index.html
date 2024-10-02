@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <style>
         body {
-            background-color: #f0f8ff;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 20px;
+            background-image: url('/static/images/WoodBG.png');
+            background-repeat: repeat; 
+            background-size: auto; 
+            background-position: top left;
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+            color:#ffffff
         }
         h1 {
-            color: #282224;
+            color: #ffffff;
             text-align: center;
         }
         .container {
             max-width: 600px;
             margin: auto;
-            background: #ffffff;
+            background: #190c06;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -41,6 +43,7 @@
             cursor: pointer;
             margin-top: 20px;
             text-align: center;
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
         }
         .btn:hover {
             background: #56b0d4;
@@ -53,6 +56,8 @@
         }
     </style>
 </head>
+
+
 <body>
     <div class="container">
         <img src="{% static 'images/logo.png' %}" alt="Blue Moose Coffee Logo" class="logo"> <!-- Logo -->
