@@ -1,32 +1,50 @@
 from django.shortcuts import render, redirect
 from .models import Customer
+from .forms import RegistrationForm, LoginForm
 
 def index(request):
     return render(request, 'index.html')
 
 def register(request):
     if request.method == 'POST':
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        phone_number = request.POST['phone_number']  # Add this line
-
-        if first_name and last_name and phone_number:  # Include phone_number in the check
-            customer = Customer(first_name=first_name, last_name=last_name, phone_number=phone_number)  # Add phone_number here
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            phone_number = form.cleaned_data['phone_number']
+            password = form.cleaned_data['password']
+            
+            # Create a new customer and hash their password
+            customer = Customer(first_name=first_name, last_name=last_name, phone_number=phone_number)
+            customer.set_password(password)  # Hashing the password
             customer.save()
+            
             return redirect('success_page')  # Redirect to a success page or the main page
+    else:
+        form = RegistrationForm()
 
-    return render(request, 'register.html')
-
+    return render(request, 'register.html', {'form': form})
+    
 def login(request):
     if request.method == 'POST':
-        full_name = request.POST['full_name']
-        try:
-            customer = Customer.objects.get(first_name=full_name.split()[0], last_name=full_name.split()[1])
-            return render(request, 'member_data.html', {'customer': customer})
-        except Customer.DoesNotExist:
-            return render(request, 'login.html', {'error': "Member not found."})
-    return render(request, 'login.html')
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            phone_number = form.cleaned_data['phone_number']
+            password = form.cleaned_data['password']
 
+            try:
+                customer = Customer.objects.get(phone_number=phone_number)
+                if customer.check_password(password):  # Check the password
+                    return redirect('thank_you')  # Redirect to a successful login page
+                else:
+                    form.add_error(None, "Incorrect password.")
+            except Customer.DoesNotExist:
+                form.add_error(None, "No account found with that phone number.")
+    else:
+        form = LoginForm()
+
+    return render(request, 'login.html', {'form': form})
+    
 def success_page(request):
     return render(request, 'success.html')
 
