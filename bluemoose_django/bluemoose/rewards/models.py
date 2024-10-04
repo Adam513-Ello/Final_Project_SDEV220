@@ -34,3 +34,31 @@ class Customer(AbstractBaseUser):
 
     def __str__(self):
         return self.phone_number
+
+class RedeemableItem(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+    point_cost = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
+class PurchasableItem(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)  # price in dollars
+    points_earned = models.PositiveIntegerField()  # points awarded for purchasing this item
+
+    def __str__(self):
+        return self.name
+
+class Order(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    item = models.ForeignKey(PurchasableItem, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+    total_price = models.DecimalField(max_digits=6, decimal_places=2)
+    date_ordered = models.DateTimeField(auto_now_add=True)
+    points_earned = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"Order {self.id} by {self.customer}"
