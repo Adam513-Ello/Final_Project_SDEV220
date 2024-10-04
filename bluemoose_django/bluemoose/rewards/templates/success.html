@@ -1,2 +1,46 @@
-<h1>Registration Successful!</h1>
-<p>Thank you for joining!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            background-image: url('/static/images/WoodBG.png');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
+            font-family: 'Century Gothic', sans-serif;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        p {
+            font-size: 20px;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(25, 12, 6, 0.9);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration Successful!</h1>
+        <p>Thank you for joining!</p>
+    </div>
+</body>
+</html>
