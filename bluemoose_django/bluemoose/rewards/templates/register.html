@@ -1,19 +1,111 @@
-<form method="post">
-    {% csrf_token %}
-    <label for="first_name">First Name:</label>
-    <input type="text" id="first_name" name="first_name" required><br>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Blue Moose Coffee Rewards</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            background-image: url('/static/images/WoodBG.png');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+            color: white;
+        }
+        h1, p {
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #190c06;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn {
+            display: block;
+            width: auto;
+            max-width: 200px;
+            padding: 10px;
+            background: #67C8E6;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn:hover {
+            background: #56b0d4;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            height: auto;
+        }
+        form {
+            width: 100%;
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: white;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #67C8E6;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #56b0d4;
+        }
+    </style>
+</head>
 
-    <label for="last_name">Last Name:</label>
-    <input type="text" id="last_name" name="last_name" required><br>
+<body>
+    <div class="container">
+        <img src="{% static 'images/logo.png' %}" alt="Blue Moose Coffee Logo" class="logo">
+        <h1>Create Your Account</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
 
-    <label for="phone_number">Phone Number:</label>
-    <input type="text" id="phone_number" name="phone_number" required><br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br>
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" id="phone_number" name="phone_number" required>
 
-    <label for="confirm_password">Confirm Password:</label>
-    <input type="password" id="confirm_password" name="confirm_password" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-    <button type="submit">Register</button>
-</form>
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <input type="submit" value="Register" class="btn">
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}" style="color:#67C8E6;">Login here</a></p>
+    </div>
+</body>
+</html>
