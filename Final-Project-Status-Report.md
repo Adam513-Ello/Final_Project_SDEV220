@@ -134,3 +134,6 @@
 * Amelia created a logout feature
 * Amelia added redirect features on login and registration pages, so that if user does not have a profile, they can be redirected to registeration page or vice versa
 * Amelia created an admin user profile to manage customer data
+
+* October 4, 2024*
+* Amelia extended member_data function to include logic for redeemable and purchasable items, as well as the ability to redeem or purchase items.
