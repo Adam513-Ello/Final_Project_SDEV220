@@ -20,7 +20,7 @@
             text-align: center;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: auto;
             background: #190c06;
             padding: 20px;
@@ -53,14 +53,52 @@
             max-width: 100%; /* Responsive */
             height: auto; /* Maintain aspect ratio */
         }
+        .items-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .item {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome, {{ customer.first_name }} {{ customer.last_name }}</h1>
         <p>Reward Balance: {{ customer.reward_balance }} points</p>
+
+        <!-- Past Purchases Section -->
         <h3>Past Purchases:</h3>
         <p>{{ customer.past_purchases }}</p>
+
+        <!-- Redeemable Items Section -->
+        <div class="items-section">
+            <h3>Redeem Items</h3>
+            {% for item in redeemable_items %}
+                <div class="item">
+                    <p>{{ item.name }} - {{ item.point_cost }} points</p>
+                    <form method="post" action="{% url 'redeem_item' item.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn" {% if customer.reward_balance < item.point_cost %}disabled{% endif %}>Redeem</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Purchasable Items Section -->
+        <div class="items-section">
+            <h3>Purchase Items</h3>
+            {% for item in purchasable_items %}
+                <div class="item">
+                    <p>{{ item.name }} - Earn {{ item.reward_points }} points</p>
+                    <form method="post" action="{% url 'purchase_item' item.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">Purchase</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+
         <a href="{% url 'logout' %}" class="btn">Logout</a> 
     </div>
 </body>
