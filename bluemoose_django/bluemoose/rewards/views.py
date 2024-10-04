@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Customer
 from .forms import RegistrationForm, LoginForm
+from django.contrib.auth import logout
 
 def index(request):
     return render(request, 'index.html')
@@ -24,7 +25,7 @@ def register(request):
         form = RegistrationForm()
 
     return render(request, 'register.html', {'form': form})
-    
+
 def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -35,7 +36,8 @@ def login(request):
             try:
                 customer = Customer.objects.get(phone_number=phone_number)
                 if customer.check_password(password):  # Check the password
-                    return redirect('thank_you')  # Redirect to a successful login page
+                    request.session['customer_id'] = customer.id  # Store customer ID in session
+                    return redirect('member_data')  # Redirect to member data page
                 else:
                     form.add_error(None, "Incorrect password.")
             except Customer.DoesNotExist:
@@ -44,9 +46,22 @@ def login(request):
         form = LoginForm()
 
     return render(request, 'login.html', {'form': form})
-    
+
+def member_data(request):
+    customer_id = request.session.get('customer_id')
+    if not customer_id:
+        return redirect('login')  # Redirect to login if not logged in
+
+    try:
+        customer = Customer.objects.get(id=customer_id)
+    except Customer.DoesNotExist:
+        return redirect('login')  # Redirect to login if customer not found
+
+    return render(request, 'member_data.html', {'customer': customer})
+
 def success_page(request):
     return render(request, 'success.html')
 
-def index(request):
-    return render(request, 'index.html')
+def logout_view(request):
+    logout(request)
+    return redirect('index')  # Redirect to the index page after logging out
