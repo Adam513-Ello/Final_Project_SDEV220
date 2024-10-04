@@ -132,4 +132,5 @@
 * Amelia coded all pages(login page, customer profile page, registration page, and thank you for registering page) of webapp to have the same background and style as the main page
 * Amelia fixed login redirect errors so that it will successfully redirect the user to their profile
 * Amelia created a logout feature
+* Amelia added redirect features on login and registration pages, so that if user does not have a profile, they can be redirected to registeration page or vice versa
 * Amelia created an admin user profile to manage customer data
