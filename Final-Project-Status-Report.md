@@ -122,3 +122,14 @@
 
 *September 28, 2024*
 * Amelia began converting the Python Tkinter code to Django and then editing and designing the main window
+
+
+*October 1, 2024*
+* Amelia finished designing and editing the main page of the webapp
+
+
+*October 3, 2024*
+* Amelia coded all pages(login page, customer profile page, registration page, and thank you for registering page) of webapp to have the same background and style as the main page
+* Amelia fixed login redirect errors so that it will successfully redirect the user to their profile
+* Amelia created a logout feature
+* Amelia created an admin user profile to manage customer data
