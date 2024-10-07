@@ -137,3 +137,6 @@
 
 * October 4, 2024*
 * Amelia extended member_data function to include logic for redeemable and purchasable items, as well as the ability to redeem or purchase items.
+
+* October 7, 2024*
+* Steve fixed issues with purchase and redeem
