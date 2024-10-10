@@ -1,0 +1,39 @@
+body {
+    background-color: #41a2f8;
+    font-family: 'Century Gothic', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #190c06;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #56b3e1;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.btn:hover {
+    background: #56b3e1;
+}
+
+body {
+    background-image: url('/static/images/WoodBG.png');
+    background-repeat: repeat; 
+    background-size: auto; 
+    background-position: top left;
+}

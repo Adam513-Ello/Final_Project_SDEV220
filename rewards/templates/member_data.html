@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Moose Coffee Rewards</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            background-image: url('{% static 'images/WoodBG.png' %}');
+            background-repeat: repeat; 
+            background-size: auto; 
+            background-position: top left;
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+            color: #ffffff;
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #190c06;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn {
+            display: block;
+            width: auto;
+            max-width: 200px;
+            padding: 10px;
+            background: #67C8E6;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+        }
+        .btn:hover {
+            background: #56b0d4;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px; /* Center the logo and add bottom margin */
+            max-width: 100%; /* Responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .items-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .item {
+            margin-bottom: 20px;
+        }
+        .alert {
+            color: #ffcc00; /* Color for messages */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ customer.first_name }} {{ customer.last_name }}</h1>
+        <p>Reward Balance: {{ customer.reward_balance }} points</p>
+
+        <!-- Display messages -->
+        {% if message %}
+            <div class="alert">{{ message }}</div>
+        {% endif %}
+
+        <!-- Past Purchases Section -->
+        <h3>Past Purchases:</h3>
+        <ul>
+            {% for order in past_purchases %}
+                <li>
+                    <strong>Order ID:</strong> {{ order.id }} <br>
+                    <strong>Item:</strong> {{ order.item.name }} <br>
+                    <strong>Quantity:</strong> {{ order.quantity }} <br>
+                    <strong>Total Price:</strong> ${{ order.total_price|floatformat:2 }} <br>
+                    <strong>Date Ordered:</strong> {{ order.date_ordered|date:"Y-m-d H:i" }} <br>
+                    <strong>Points Earned:</strong> {{ order.points_earned }} <br>
+                </li>
+            {% empty %}
+                <li>No past purchases found.</li>
+            {% endfor %}
+        </ul>
+
+        <!-- Redeemable Items Section -->
+        <div class="items-section">
+            <h3>Redeem Items</h3>
+            {% for item in redeemable_items %}
+                <div class="item">
+                    <p>{{ item.name }} - {{ item.point_cost }} points</p>
+                    <form method="post" action="{% url 'redeem_item' item.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn" {% if customer.reward_balance < item.point_cost %}disabled{% endif %}>Redeem</button>
+                        {% if customer.reward_balance < item.point_cost %}
+                            <p class="alert">Insufficient points to redeem this item.</p>
+                        {% endif %}
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Purchasable Items Section -->
+        <div class="items-section">
+            <h3>Purchase Items</h3>
+            <form method="post" action="{% url 'member_data' %}">  <!-- Use the appropriate URL for handling purchases -->
+                {% csrf_token %}
+                {% for item in purchasable_items %}
+                    <div class="item">
+                        <p>{{ item.name }} - ${{ item.price }} - Earn {{ item.points_earned }} points</p>
+                        <input type="checkbox" name="items" value="{{ item.id }}">
+                        <input type="number" name="quantity_{{ item.id }}" value="1" min="1" style="width: 50px;">
+                    </div>
+                {% endfor %}
+                <button type="submit" name="purchase_items" class="btn">Purchase Selected Items</button>
+            </form>
+        </div>
+
+        <a href="{% url 'logout' %}" class="btn">Logout</a> 
+    </div>
+</body>
+</html>
