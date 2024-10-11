@@ -135,13 +135,13 @@
 * Amelia added redirect features on login and registration pages, so that if user does not have a profile, they can be redirected to registeration page or vice versa
 * Amelia created an admin user profile to manage customer data
 
-* October 4, 2024*
+*October 4, 2024*
 * Amelia extended member_data function to include logic for redeemable and purchasable items, as well as the ability to redeem or purchase items.
 
-* October 7, 2024*
+*October 7, 2024*
 * Steve fixed issues with purchase and redeem
 * Amelia worked on program so it shows past orders, and will display a messages under redeem items if user don't have enough points to redeem them. She also made it so it will let user add multiple items to an order vs just one item = an order before
 
-* October 10, 2024*
+*October 10, 2024*
 * Amelia uploaded and deployed program on python anywhere
 * Steven and Autumn tested the website to confirm that everything worked and no issues or errors occurred
