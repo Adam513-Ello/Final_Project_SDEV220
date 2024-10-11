@@ -140,3 +140,8 @@
 
 * October 7, 2024*
 * Steve fixed issues with purchase and redeem
+* Amelia worked on program so it shows past orders, and will display a messages under redeem items if user don't have enough points to redeem them. She also made it so it will let user add multiple items to an order vs just one item = an order before
+
+* October 10, 2024*
+* Amelia uploaded and deployed program on python anywhere
+* Steven and Autumn tested the website to confirm that everything worked and no issues or errors occurred
